@@ -8,8 +8,23 @@
    ```shell
    go build -o wnlc
    ```
-2. 把可执行文件移动到bin目录下
+2. 把可执行文件移动到 /usr/bin 目录下
    ```shell
-   mv wnlc /usr/local/bin
+   mv wnlc /usr/bin
    ```
 3. 运行命令 `wnlc`
+
+或者使用 make 命令一键安装
+
+```shell
+    make install
+```
+也可使用 make uninstall 卸载
+
+make 参数：
+
+| 参数      | 说明 |
+| --------- | ---- |
+| install   | 安装 |
+| uninstall | 卸载 |
+| clean     | 清理 |
