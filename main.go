@@ -230,6 +230,15 @@ func showHelp() {
 
 // 处理登录
 func handleLogin() {
+	statusResult, err := getStatus()
+	if err != nil {
+		fmt.Println("获取状态失败:", err)
+		return
+	}
+	if statusResult.Code == StatusLoggedIn {
+		fmt.Println("当前已登录")
+		return
+	}
 	config, err := readConfig()
 	if err != nil {
 		fmt.Println("未找到配置文件，请先创建")
@@ -256,6 +265,7 @@ func handleLogin() {
 	switch loginResult.Code {
 	case LoginSuccess:
 		fmt.Println("登录成功")
+		handleStatus()
 	case LoginInvalid:
 		fmt.Println("账号或密码错误")
 		if input("输入0修改密码: ") == "0" {
@@ -269,6 +279,13 @@ func handleLogin() {
 	default:
 		fmt.Println("未知的登录错误")
 	}
+}
+func handleLogout() {
+	err := logout()
+	if err != nil {
+		fmt.Println("登出失败:", err)
+	}
+	fmt.Println("登出成功")
 }
 
 // 显示状态
@@ -386,6 +403,8 @@ func main() {
 			handleLogin()
 		case "-s":
 			handleStatus()
+		case "-o":
+			handleLogout()
 		case "-c":
 			if err := createConfig(); err != nil {
 				fmt.Println("创建配置文件失败:", err)
