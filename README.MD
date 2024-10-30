@@ -17,7 +17,7 @@
 或者使用 make 命令一键安装
 
 ```shell
-    make install
+make install
 ```
 也可使用 make uninstall 卸载
 
@@ -28,3 +28,13 @@ make 参数：
 | install   | 安装 |
 | uninstall | 卸载 |
 | clean     | 清理 |
+
+> TODO暂未实现:
+>
+> wnlc 参数
+> 
+> | 参数 | 说明         |
+> | ---- | ------------ |
+> | -s   | 获取当前状态 |
+> | -l   | 仅登录       |
+> | -o   | 退出登录     |
