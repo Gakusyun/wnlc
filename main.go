@@ -302,7 +302,11 @@ func handleStatus() {
 		fmt.Printf("当前账号: %s\n", online.Username)
 		fmt.Printf("当前IP: %s\n", online.UserIpv4)
 		fmt.Printf("当前MAC: %s\n", online.UserMac)
-		fmt.Printf("%s\n", statusResult.DialMsg)
+		if statusResult.DialMsg == "" {
+			fmt.Println("当前无拨号信息")
+		} else {
+			fmt.Printf("%s\n", statusResult.DialMsg)
+		}
 	} else {
 		fmt.Println("当前未登录")
 	}
@@ -364,7 +368,11 @@ func handleInteractiveMode() {
 			fmt.Printf("当前账号: %s\n", online.Username)
 			fmt.Printf("当前IP: %s\n", online.UserIpv4)
 			fmt.Printf("当前MAC: %s\n", online.UserMac)
-			fmt.Printf("%s\n", statusResult.DialMsg)
+			if statusResult.DialMsg == "" {
+				fmt.Println("当前无拨号信息")
+			} else {
+				fmt.Printf("%s\n", statusResult.DialMsg)
+			}
 			fmt.Println("=============================================================")
 
 			choice := input("0.退出登录\n1.修改账号\n3.关闭软件但不断开连接\n请选择: ")
