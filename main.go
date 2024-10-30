@@ -22,6 +22,7 @@ const (
 	LoginSuccess = 0
 	LoginInvalid = 1
 	LoginCaptcha = 2
+	Version      = "1.1.0"
 )
 
 // 配置结构体
@@ -89,7 +90,6 @@ func login(username, password string) (*LoginResponse, error) {
 	data := map[string]interface{}{
 		"username": username,
 		"password": password,
-		"nasld":    "2",
 	}
 	jsonData, err := json.Marshal(data)
 	if err != nil {
@@ -218,6 +218,7 @@ func input(prompt string) string {
 // 显示帮助信息
 func showHelp() {
 	fmt.Println("Usage: wnlc [OPTION]")
+	fmt.Println("Version: ", Version)
 	fmt.Println("WUIT Network Login client written in Go.")
 	fmt.Println("")
 	fmt.Println("Options:")
