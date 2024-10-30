@@ -22,7 +22,7 @@ const (
 	LoginSuccess = 0
 	LoginInvalid = 1
 	LoginCaptcha = 2
-	Version      = "1.1.0"
+	Version      = "1.1.5"
 )
 
 // 配置结构体
@@ -280,6 +280,8 @@ func handleLogin() {
 		fmt.Println("未知的登录错误")
 	}
 }
+
+// 处理登出
 func handleLogout() {
 	err := logout()
 	if err != nil {
