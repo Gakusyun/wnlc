@@ -217,15 +217,15 @@ func input(prompt string) string {
 
 // 显示帮助信息
 func showHelp() {
-	fmt.Println("Usage: wnlc [OPTION]")
 	fmt.Println("Version: ", Version)
 	fmt.Println("WUIT Network Login client written in Go.")
+	fmt.Println("WNLC Usage: wnlc [OPTION]")
 	fmt.Println("")
 	fmt.Println("Options:")
-	fmt.Println("-l\tLogin to the server")
-	fmt.Println("-s\tGet status of the server")
-	fmt.Println("-c\tCreate config file")
-	fmt.Println("-h\tShow help")
+	fmt.Println("\t-l\tLogin to the server")
+	fmt.Println("\t-s\tGet status of the server")
+	fmt.Println("\t-c\tCreate config file")
+	fmt.Println("\t-h\tShow help")
 }
 
 // 处理登录
